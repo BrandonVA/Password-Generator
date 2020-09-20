@@ -12,8 +12,6 @@
 // * Gather user input with prompt's and confirm's
 
 
-// Creating a global var for the password.
-let password ='';
 
 const generatePassword = () => {
 
