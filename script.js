@@ -28,7 +28,7 @@ const generatePassword = () => {
     let randomNumber = Math.floor(Math.random() * arr.length)
     let randomCharacter = arr[randomNumber];
     // If the the passwordlength asked for is less than the current testPassword than 
-    // add the generated character if not do not add ends of function.
+    // add the generated character if not ends of function.
     if (passwordLength > testPassword.length){
       testPassword += randomCharacter;
     }
@@ -53,10 +53,26 @@ const generatePassword = () => {
     
     
     // Asks the user in a series of confirm prompts if they want the following criteia in their passwrod.
-    const containLowerCase = confirm("Click okay if you would like your password to conatin Lower Case Letters.");
-    const containUpperCase = confirm('Would you like your password to contain Upper Case Letters');
-    const conatinNumbers = confirm('Would you like your password to contain Numbers');
-    const containSpecialCharacters = confirm('Would you like your password to contain Specail Characters')
+    let containLowerCase; 
+    let containUpperCase; 
+    let conatinNumbers; 
+    let containSpecialCharacters;
+
+/// add validation for confirm messages make sure at least one is true...
+    const passwordCriteria = () => {
+      containLowerCase = confirm("Click okay if you would like your password to conatin Lower Case Letters.");
+      containUpperCase = confirm('Would you like your password to contain Upper Case Letters');
+      conatinNumbers = confirm('Would you like your password to contain Numbers');
+      containSpecialCharacters = confirm('Would you like your password to contain Specail Characters');
+    }
+    passwordCriteria();
+
+    // validating the confirms promts if none are true than ask agian.
+    if( !containLowerCase && !containUpperCase && !conatinNumbers && !containSpecialCharacters) {
+      alert('You must pick a password criteria.')
+      passwordCriteria();
+    }
+
 
     for (var i = 0; testPassword.length < passwordLength; i++){
       // user wants passWord to contain lowercase letters, ...
