@@ -68,9 +68,15 @@ const generatePassword = () => {
     passwordCriteria();
 
     // validating the confirms promts if none are true than ask agian.
-    if( !containLowerCase && !containUpperCase && !conatinNumbers && !containSpecialCharacters) {
-      alert('You must pick a password criteria.')
-      passwordCriteria();
+     
+    
+    for(var i = false; i !== true;){
+      if( !containLowerCase && !containUpperCase && !conatinNumbers && !containSpecialCharacters){
+        alert('You must pick a password criteria.')
+        passwordCriteria();
+      } else {
+        i = true;
+      }
     }
 
 
