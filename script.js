@@ -60,7 +60,7 @@ const generatePassword = () => {
 
 /// add validation for confirm messages make sure at least one is true...
     const passwordCriteria = () => {
-      containLowerCase = confirm("Click okay if you would like your password to conatin Lower Case Letters.");
+      containLowerCase = confirm("Click okay if you would like your password to contain Lower Case Letters.");
       containUpperCase = confirm('Would you like your password to contain Upper Case Letters');
       conatinNumbers = confirm('Would you like your password to contain Numbers');
       containSpecialCharacters = confirm('Would you like your password to contain Specail Characters');
