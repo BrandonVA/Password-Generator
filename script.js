@@ -23,6 +23,9 @@ const generatePassword = () => {
   const numbers = ['1','2','3','4','5','6','7','8','9','0'];
   const specialCharacters ='!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
+  // Creating a local test password to push to the global password var
+  let testPassword = '';
+
   const getRandomCharacter = arr => {
     // Creating var for a random number and a var to hold to random number in the specific array/list of characters
     let randomNumber = Math.floor(Math.random() * arr.length)
@@ -35,23 +38,13 @@ const generatePassword = () => {
     
   }
 
-
-  // Creating a local test password to push to the global password var
-  let testPassword = '';
-
-  
-
   // Prompt user for password crriteria length between 8 - 128 characters
   const passwordPromt = prompt('How long would you like your password to be? (must be between 8-128 characters long.)');
   let passwordLength = parseInt(passwordPromt);
 
   // validates users input 
   if (typeof passwordLength === 'number' && passwordLength >= 8 && passwordLength <= 128){
-    
-    // Checking the lenght of the users desired passwrod length
-    console.log(  passwordLength );
-    
-    
+  
     // Asks the user in a series of confirm prompts if they want the following criteia in their passwrod.
     let containLowerCase; 
     let containUpperCase; 
@@ -68,8 +61,6 @@ const generatePassword = () => {
     passwordCriteria();
 
     // validating the confirms promts if none are true than ask agian.
-     
-    
     for(var i = false; i !== true;){
       if( !containLowerCase && !containUpperCase && !conatinNumbers && !containSpecialCharacters){
         alert('You must pick a password criteria.')
@@ -100,18 +91,11 @@ const generatePassword = () => {
       }
     }
 
-
-
-
   // This alerts if the user didn't enter a valid answer in the prompt message.
   } else {
     alert("Error: please enter number from 8 - 128")
   }
     
-  // Checking the lenght of the generated password
-  console.log( testPassword.length )
-  console.log('-----------------------');
-
   //  return the new password end of the function.
   return testPassword;
 }
