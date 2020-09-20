@@ -9,5 +9,7 @@
 
 
 # About 
-This is a password Generator that will ask the user for what type of characters they want their password to include than randomly genrate them a password based on the given criteria.
+This is a password Generator that will ask the user for what type of characters they want their password to include than randomly genrate them a password based on the given criteria. This project was built using plain javascript.
 
+# Technology
+- Javascript
